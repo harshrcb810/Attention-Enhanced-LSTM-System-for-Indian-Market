@@ -21,11 +21,11 @@ class AttentionLayer(layers.Layer):
 
     def call(self, inputs):
         # inputs shape: (batch, time_steps, features)
-        # har time-step ka importance score
+        
         scores = tf.reduce_mean(inputs, axis=2)
-        # scores ko weights me convert (0–1, sum = 1)
+        
         weights = tf.nn.softmax(scores, axis=1)
-        # important time-steps ka weighted sum
+        
         context = tf.reduce_sum(
             inputs * tf.expand_dims(weights, -1),
             axis=1

@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ============ API KEYS ============
-NEWSAPI_KEY = os.getenv("NEWSAPI_KEY", "272cce001c674f2b8fe9bb051b2c1804")
+NEWSAPI_KEY = os.getenv("NEWSAPI_KEY")
 
 # ============ MODEL PARAMETERS ============
 LOOKBACK = int(os.getenv("LOOKBACK", "60"))
